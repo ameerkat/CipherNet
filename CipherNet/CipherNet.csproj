@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Common\" />
+    <Folder Include="Algorithms\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Class1.cs" />
+    <Compile Remove="Common\IEnumerableExtensions.cs" />
+    <Compile Remove="Algorithms\Baconian.cs" />
+  </ItemGroup>
+</Project>
