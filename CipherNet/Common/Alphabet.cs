@@ -74,7 +74,7 @@ namespace CipherNet.Common
         }
 
         public char this[int i] {
-            get => CharacterOrdering[i];
+            get => CharacterOrdering[i%CharacterOrdering.Length];
         }
 
         public int GetIndex(char ch) {

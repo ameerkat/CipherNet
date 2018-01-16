@@ -17,5 +17,14 @@ namespace CipherNetTests
             var encrypted = col.Encrypt(TextExample);
             Assert.AreEqual("CAHSXTTCPSTANREADSITAKWAB".ToUpper(), encrypted);
         }
+
+        [TestMethod]
+        public void DecryptBasic() {
+            ColumnarTranspostition col = new ColumnarTranspostition("ZEBRA");
+            var encrypted = "CAHSXTTCPSTANREADSITAKWAB";
+            var plainText = col.Decrypt(encrypted);
+            // Starts with as text could be padded
+            Assert.IsTrue(plainText.StartsWith(TextExample, StringComparison.Ordinal));
+        }
     }
 }
