@@ -21,6 +21,12 @@ namespace CipherNet.Common
             return sb.ToString();
         }
 
+        public static char ShiftCharacter(Alphabet alphabet, char toShift, char shift, bool subtractive = false) {
+            var shiftAmount = alphabet.GetIndex(shift);
+            var toShiftCharacter = alphabet.GetIndex(toShift);
+            return alphabet[Math.PositiveMod(toShiftCharacter + ((subtractive ? -1 : 1) * shiftAmount), alphabet.Length)];
+        }
+
         public static string RepeatToFill(string keyword, int length) {
             StringBuilder keyText = new StringBuilder();
             for (int i = 0; i < length / keyword.Length; ++i) {
