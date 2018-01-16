@@ -20,5 +20,15 @@ namespace CipherNet.Common
 
             return sb.ToString();
         }
+
+        public static string RepeatToFill(string keyword, int length) {
+            StringBuilder keyText = new StringBuilder();
+            for (int i = 0; i < length / keyword.Length; ++i) {
+                keyText.Append(keyword);
+            }
+
+            keyText.Append(keyword.Substring(0,length%keyword.Length));
+            return keyText.ToString();
+        }
     }
 }

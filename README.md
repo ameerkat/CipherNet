@@ -14,3 +14,4 @@ CipherNet includes implementations of classical cryptographic algorithms and a f
 * Rail Fence
 * Rot13
 * Alphabet Substitution
+* Beaufort

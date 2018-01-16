@@ -5,7 +5,7 @@ using CipherNet.Common;
 
 namespace CipherNet.Algorithms
 {
-    public class Autokey
+    public class Autokey : ICipherAlgorithm
     {
         public Alphabet Alphabet { get; private set; }
         public string Keyword { get; private set; }
