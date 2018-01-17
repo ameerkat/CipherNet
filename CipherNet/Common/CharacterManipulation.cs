@@ -36,5 +36,17 @@ namespace CipherNet.Common
             keyText.Append(keyword.Substring(0,length%keyword.Length));
             return keyText.ToString();
         }
+
+        public static string RotateRight(string toRotate, int n)
+        {
+            var rotationAmount = Math.PositiveMod(n, toRotate.Length);
+            return toRotate.Substring(toRotate.Length - rotationAmount, rotationAmount) + toRotate.Substring(0, rotationAmount + 1);
+        }
+
+        public static string RotateLeft(string toRotate, int n)
+        {
+            var rotationAmount = Math.PositiveMod(n, toRotate.Length);
+            return toRotate.Substring(rotationAmount) + toRotate.Substring(0, rotationAmount);
+        }
     }
 }

@@ -16,3 +16,4 @@ CipherNet includes implementations of classical cryptographic algorithms and a f
 * Alphabet Substitution
 * Beaufort
 * Porta
+* Vigenere
