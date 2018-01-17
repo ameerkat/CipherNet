@@ -19,3 +19,12 @@ CipherNet includes implementations of classical cryptographic algorithms and a f
 * Vigenere
 * ADFGX
 * ADFGVX
+* Four-Square
+
+### TODO
+* Hill
+* Playfair
+* Bifid
+* Straddle Checkerboard
+* Trifid
+* Fractionated Morse Code

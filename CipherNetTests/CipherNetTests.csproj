@@ -15,4 +15,8 @@
   <ItemGroup>
     <ProjectReference Include="..\CipherNet\CipherNet.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Common\" />
+    <Folder Include="Algorithms\" />
+  </ItemGroup>
 </Project>
