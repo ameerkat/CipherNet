@@ -27,7 +27,9 @@ namespace CipherNet.Common
 
             for (int i = 0; i < characterOrdering.Length; ++i)
             {
-                index[characterOrdering[i] - 'A'] = i;
+                if (characterOrdering[i] >= 'A' && characterOrdering[i] <= 'Z') {
+                    index[characterOrdering[i] - 'A'] = i;
+                }
             }
             return index;
         }

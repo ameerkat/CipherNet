@@ -4,7 +4,7 @@ using CipherNet.Common;
 
 namespace CipherNet.Algorithms
 {
-    public class Vigenere
+    public class Vigenere : ICipherAlgorithm
     {
         public string Keyword { get; private set; }
         public Alphabet Alphabet { get; private set; }

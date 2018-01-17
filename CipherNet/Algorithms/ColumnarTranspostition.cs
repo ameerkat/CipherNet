@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using CipherNet.Common;
 
 namespace CipherNet.Algorithms
 {
-    public class ColumnarTranspostition
+    public class ColumnarTranspostition : ICipherAlgorithm
     {
         public string Keyword { get; private set; }
         public bool Padded { get; private set; }
@@ -52,7 +53,7 @@ namespace CipherNet.Algorithms
         }
 
         public string Encrypt(string plainText) {
-            if (Padded) {
+            if (Padded && plainText.Length%Keyword.Length != 0) {
                 var amountToPad = Keyword.Length - (plainText.Length % Keyword.Length);
                 StringBuilder padder = new StringBuilder();
                 padder.Append(PaddingChar, amountToPad);
@@ -67,7 +68,7 @@ namespace CipherNet.Algorithms
             StringBuilder[] columnBuilder = new StringBuilder[Keyword.Length];
             for (int i = 0; i < encryptedText.Length; ++i)
             {
-                var columnIndex = i / Keyword.Length;
+                var columnIndex = i / (encryptedText.Length/Keyword.Length);
                 if (columnBuilder[columnIndex] == null)
                 {
                     columnBuilder[columnIndex] = new StringBuilder();
